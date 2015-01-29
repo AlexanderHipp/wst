@@ -1,0 +1,355 @@
+@charset "utf-8";
+/* CSS Document */
+
+/****Layout****/
+
+body  {
+	background: #fff;
+	margin: 0; 
+	padding: 0;
+	color:#333;
+	font: 12px / 140% arial, helvetica, clean, sans-serif;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+#page {
+	width:800px;
+	margin: 0 auto;
+    position:relative;
+	font:Arial, Helvetica, sans-serif;
+	
+}
+
+#heading {
+	background:url(../img/head.png);
+	height:95px;
+	width:850px;
+	float:right;
+}
+
+#navi {
+	background-color:#FFF;
+	width:800px;
+	height:20px;
+	float:left;
+}
+
+#navi_list {
+	width:500px;
+	float:left;
+	height:20px;
+	float:right;
+	
+}
+
+#main {
+	background-color:#FFF;
+	width:800px;
+	clear:both;
+	float:left;
+	
+}
+
+/****page_head****/
+
+#pagehead {
+	background-color:#696969;
+	height:40px;
+	width:800px;
+	text-transform:uppercase;
+	color:#FFF;
+	font-size:18px;
+	font-weight:bold;
+	margin:5px 0 10px 0;
+	
+}
+
+
+#pagehead span {
+	line-height:40px;
+	width:800px;
+	vertical-align:middle;
+	margin-left:10px;
+	
+}
+
+
+/****box****/
+
+#box {
+	background-color:#ececec;
+	border:solid #cacaca 1px;
+	padding:10px 10px 10px 10px;
+	margin-bottom:10px;
+	font-size:12px;
+}
+
+#box_erg {
+	background-color:#ececec;
+	border:solid #cacaca 1px;
+	padding:5px 5px 0 5px;
+	font-size:12px;
+	height:80px;
+	margin-bottom:5px;
+	
+}
+
+#box_2_col {
+	background-color:#ececec;
+	border:solid #cacaca 1px;
+	padding:10px 10px 10px 10px;
+	margin-bottom:10px;
+	font-size:12px;
+	width:375px;
+}
+
+
+#box h1 {
+	text-transform:uppercase;
+	font-weight:bold;
+	margin:0;
+	font-size:13px;
+}
+
+#nav_box {
+	float:right;
+	margin-left:10px;
+	text-transform:uppercase;
+}
+
+#nav_box a:hover, #box a:hover, #wst_h1 a:hover  {
+	color:#666;
+}
+
+#left {
+	float:left;
+}
+
+#right {
+	float:right;
+
+}
+
+#layer_left {
+	position:absolute;
+	width:395px;
+	height:2000px;
+	border:solid #cacaca 1px;
+	background-color:#efefef;
+	left:0;
+	top:170px;
+	z-index:1;
+	zoom:1;
+	filter:alpha(opacity=50);
+	opacity: 0.4;
+}
+
+#layer_right {
+	position:absolute;
+	width:395px;
+	height:1000px;
+	border:solid #cacaca 1px;
+	background-color:#efefef;
+	left:403px;
+	top:170px;
+	z-index:1;
+	zoom:1;
+	filter:alpha(opacity=50);
+	opacity: 0.9;
+}
+
+#box_anmelden {
+	margin:10px 0 10px 0;
+	background-color:#ececec;
+	border:solid #cacaca 1px;
+	padding:10px 10px 10px 10px;
+	font-size:12px;
+	clear:both;
+	
+}
+
+/*#box_comment {
+	background-color:#ececec;
+	border:solid #cacaca 1px;
+	padding:10px 10px 10px 10px;
+	margin-left:10px;
+	font-size:12px;	
+}
+
+#box_comment h1 {
+	text-transform:uppercase;
+	font-weight:bold;
+	margin:0;
+	font-size:12px;
+}*/
+
+
+/**#left {
+	float:left;
+	width:395px;
+}*/
+
+/**#right {
+	float:right;
+	width:395px;
+}*/
+
+
+#branche_zusatz {
+	float:left;
+	margin:7px 0 0 10px;
+}
+
+
+
+/****text fields****/
+
+.element text medium {
+	margin-left:5px;
+}
+
+
+/****Ergebnisse****/
+
+
+
+#wst_descr {
+	width:255px;
+	float:left;
+	margin-left:10px;
+	
+}
+
+#wst_h1 {
+	font-weight:bold;
+}
+
+#wst_picto {
+	width:130px;
+	float:left;
+}
+
+#wst_bestand {
+	width:70px;
+	float:left;
+}
+
+#wst_geheim {
+	width:60px;
+	float:left;
+}
+
+#wst_pdf {
+	width:70px;
+	float:left;
+}
+
+#wst_list_check {
+	float:right;
+}
+
+
+
+/****Listen****/
+
+#box table tr th  {
+	text-align:left;
+	border-bottom:#cacaca solid 1px;
+	
+}
+
+/****Bilder****/
+
+#picture_big {
+	border:solid #cacaca 1px;
+	background-color:#FFF;
+	float:left;
+	height:225px;
+	width:373px;
+	text-align:center;
+	overflow:hidden;
+}
+
+
+#picture_small {
+	border:solid #cacaca 1px;
+	background-color:#FFF;
+	width:116px;
+	height:70px;
+	text-align: center;
+	float:left;
+}
+
+/****Antworten****/
+
+#red {
+	color:#D5001b;
+	
+}
+
+.red_fb {
+	color:#D5001b;
+	
+}
+
+#green {
+	color:#7DBA00;
+	
+}
+
+
+
+/******Flags*******/
+
+#flags {
+	float:left; 
+	padding-top:5px; 
+	width:100px;
+	height:30px;
+}
+
+
+.german {
+	background-image:url(../img/ger.png);
+	width:20px;
+	height:11px;
+	border:none;
+}
+
+.english {
+	background-image:url(../img/eng.png);
+	width:20px;
+	height:11px;
+	border:none;
+}
+
+/****buttons****/
+
+.grau {
+	background-color:#696969;
+	
+	border:0;
+	color:#fff;
+	padding:4px;
+	cursor:pointer;
+}
+
+/*****PRINTER******/
+
+.printer {
+	float:right;
+	margin-right:10px;
+	margin-top:10px;
+	background-image:url(../img/printer.png);
+	width:16px;
+	height:16px;
+	border:none;
+	background-color:#696969;
+	cursor:pointer;
+	
+}
+

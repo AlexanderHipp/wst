@@ -1,0 +1,61 @@
+.meg_group {
+	clear: none;
+	width: 380px;
+}
+.meg_subgroup {
+	float: left;
+	
+	height: 36px;
+	
+	
+}
+#MEG_SUBGROUP_MEG01_2 {
+	clear: left;
+}
+.meg_btn {
+	width: 32px;
+	height: 32px;
+	margin: 2px 4px 2px 0;
+}
+.meg_btn:hover {
+	background-position: 0 -32px;
+}
+.meg_btn_pushed {
+	background-position: 0 -64px;
+}
+.meg_btn_pushed:hover {
+	background-position: 0 -96px;
+}
+.meg_imgs {
+	width: 102px;
+}
+.meg_ddlb {
+	display: block;
+	width: 250px;
+	clear: left;
+	float: left;
+	margin-top: 1px;
+}
+
+img#suche_typ {
+	display: none;
+}
+
+
+.meg_group {
+	clear: left;
+}
+
+.meg_btn {
+	cursor: pointer;
+	float: left;
+	color: #051992;
+	margin-right: 8px;
+}
+.meg_btn:hover {
+	color: #198607;
+}
+.meg_btn_pushed {
+	font-weight: bold;
+}
+
