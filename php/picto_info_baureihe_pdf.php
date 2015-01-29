@@ -1,13 +1,13 @@
-<?php 
-/** 
-*	@project: Werkstück-Management CHIRON-WERKE GmbH & Co. KG
+<?php
+/**
+*	@project: Werkstï¿½ck-Management CHIRON-WERKE GmbH & Co. KG
 *	@author: Alexander Hipp
 *	@date: 01.04.2012
 */
 
 	// Auswahl welche Piktogrammer angezeigt werden sollen
-	
-	
+
+
 	// Baureihe
 	if ($zeile_wst['baureihe'] == 401) {
 		$baureihe = "../img/picto/meg_401.png";
@@ -27,7 +27,16 @@
 	if ($zeile_wst['baureihe'] == 406) {
 		$baureihe = "../img/picto/meg_406.png";
 	}
-	
+	if ($zeile_wst['baureihe'] == 407) {
+		$baureihe = "../img/picto/meg_407.png";
+	}
+	if ($zeile_wst['baureihe'] == 408) {
+		$baureihe = "../img/picto/meg_408.png";
+	}
+	if ($zeile_wst['baureihe'] == 409) {
+		$baureihe = "../img/picto/meg_409.png";
+	}
+
 
 
 ?>

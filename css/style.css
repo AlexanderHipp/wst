@@ -5,7 +5,7 @@
 
 body  {
 	background: #fff;
-	margin: 0; 
+	margin: 0;
 	padding: 0;
 	color:#333;
 	font: 12px / 140% arial, helvetica, clean, sans-serif;
@@ -21,7 +21,7 @@ a {
 	margin: 0 auto;
     position:relative;
 	font:Arial, Helvetica, sans-serif;
-	
+
 }
 
 #heading {
@@ -43,7 +43,7 @@ a {
 	float:left;
 	height:20px;
 	float:right;
-	
+
 }
 
 #main {
@@ -51,7 +51,7 @@ a {
 	width:800px;
 	clear:both;
 	float:left;
-	
+
 }
 
 /****page_head****/
@@ -65,7 +65,7 @@ a {
 	font-size:18px;
 	font-weight:bold;
 	margin:5px 0 10px 0;
-	
+
 }
 
 
@@ -74,7 +74,7 @@ a {
 	width:800px;
 	vertical-align:middle;
 	margin-left:10px;
-	
+
 }
 
 
@@ -95,7 +95,7 @@ a {
 	font-size:12px;
 	height:80px;
 	margin-bottom:5px;
-	
+
 }
 
 #box_2_col {
@@ -169,7 +169,7 @@ a {
 	padding:10px 10px 10px 10px;
 	font-size:12px;
 	clear:both;
-	
+
 }
 
 /*#box_comment {
@@ -177,7 +177,7 @@ a {
 	border:solid #cacaca 1px;
 	padding:10px 10px 10px 10px;
 	margin-left:10px;
-	font-size:12px;	
+	font-size:12px;
 }
 
 #box_comment h1 {
@@ -221,7 +221,7 @@ a {
 	width:255px;
 	float:left;
 	margin-left:10px;
-	
+
 }
 
 #wst_h1 {
@@ -259,7 +259,7 @@ a {
 #box table tr th  {
 	text-align:left;
 	border-bottom:#cacaca solid 1px;
-	
+
 }
 
 /****Bilder****/
@@ -288,17 +288,17 @@ a {
 
 #red {
 	color:#D5001b;
-	
+
 }
 
 .red_fb {
 	color:#D5001b;
-	
+
 }
 
 #green {
 	color:#7DBA00;
-	
+
 }
 
 
@@ -306,8 +306,8 @@ a {
 /******Flags*******/
 
 #flags {
-	float:left; 
-	padding-top:5px; 
+	float:left;
+	padding-top:5px;
 	width:100px;
 	height:30px;
 }
@@ -331,7 +331,7 @@ a {
 
 .grau {
 	background-color:#696969;
-	
+
 	border:0;
 	color:#fff;
 	padding:4px;
@@ -350,6 +350,12 @@ a {
 	border:none;
 	background-color:#696969;
 	cursor:pointer;
-	
+
 }
 
+
+
+div#wst_picto img {
+	margin-left: 5px!important;
+	margin-bottom: 5px!important;
+}

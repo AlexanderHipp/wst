@@ -1,12 +1,12 @@
 <?php
-/** 
+/**
 *	@project: Werkstück-Management CHIRON-WERKE GmbH & Co. KG
 *	@author: Alexander Hipp
 *	@date: 01.04.2012
-*/	
+*/
 	session_start();
-	
-	
+
+
 	// Verbindung zum Datenbankserver
 	$db = mysqli_connect("db1080.mydbserver.com", "p161002", "tester", "usr_p161002_1") or die ("Es konnte keine Verbindung zur Datenbank hergestellt werden");
 	//$db = mysqli_connect("127.0.0.1", "root", "", "wst-management") or die ("Es konnte keine Verbindung zur Datenbank hergestellt werden");
@@ -19,7 +19,7 @@
 
       <link href="calendar/calendar.css" rel="stylesheet" type="text/css" />
 			<script language="javascript" src="calendar/calendar.js"></script>
-			 
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
 
 
@@ -28,6 +28,5 @@
 <script type="text/javascript" src="../js/epos.js"></script>
 
 <!-- Kalender Plugin -->
-<script type="text/javascript" src="../js/calender.js"></script>
-
-
+<link href="calendar/calendar.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="calendar/calendar.js"></script>
