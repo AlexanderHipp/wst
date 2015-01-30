@@ -257,7 +257,7 @@ session_start();
 	$pdf->MultiCell(85,5, $string_besonder, 'RLB', 1, 'L', 1);
 
 	//Spacer
-	$pdf->Cell(177.3,3, '', 0, 1);
+	$pdf->Cell(177.3,29, '', 0, 1);
 
 	//Kundenvorgaben & Kundennutzen
 	$pdf->SetFont('Arial', 'B', 10);

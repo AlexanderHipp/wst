@@ -88,6 +88,7 @@ include("base.php");?>
 				}
 
 				$datum = $_POST['datum_change'];
+				$aktiv = $_POST['aktiv'];
 				$kunde = $_POST['kunde'];
 				$maschnr = $_POST['maschnr'];
 				$maschtyp = $_POST['maschtyp'];
@@ -170,7 +171,8 @@ include("base.php");?>
 									$sql .= "foto = '$foto',";
 								}
 								$sql .= "
-								kommentar = '$kommentar'
+								kommentar = '$kommentar',
+								aktiv = '$aktiv'
 							WHERE lfd_nr = '$lfd'";
 
 					$ergebnis = mysqli_query($db, $sql)	or die('Der Datenbank konnten keine Informationen übermittelt werden. Überprüfen Sie bitte Ihre Eingabe.');
@@ -207,7 +209,13 @@ include("base.php");?>
    				} else {
 					?>
                     	<input type=button onClick="window.location.href='wst_info.php?lfd=<?php echo $lfd; ?>'" value="zum Werkstück" class="grau" />
-                        <a href="javascript:gf_onsubmit_set_meg();document.queryform.submit();" rel="nofollow"><input name="wst_change" type="submit"  value="speichern" class="grau" /></a>
+                      <a href="javascript:gf_onsubmit_set_meg();document.queryform.submit();" rel="nofollow"><input name="wst_change" type="submit"  value="speichern" class="grau" /></a>
+											<div>
+													<select style="float:right;" name="aktiv" >
+														<option value="0" <?php if( $zeile['aktiv'] == 0 ) {echo "selected='selected'";}?> >deaktivieren</option>
+														<option value="1" <?php if( $zeile['aktiv'] == 1 ) {echo "selected='selected'";}?> >aktiv</option>
+													</select>
+											</div>
 					<?php
 				}
 
