@@ -110,48 +110,7 @@ include('calendar/classes/tc_calendar.php'); ?>
 														<td><label style="margin-left:50px;" for="lfdnr"><?php if ($la == en) {echo 'Number';} else {echo 'Lfd-Nr';} ?></label></td>
 														<td><input style="margin-left:10px;" id="lfdnr" name="suche_lfdnr" class="element text medium" type="text" maxlength="255" value="<?php echo $_GET['suche_lfdnr'] ?>"/></td>
 														</tr>
-														<tr><td>&nbsp;</td></tr>
 
-														<!-- <tr>
-															<td><label for="datum"><?php if ($la == en) {echo 'Period';} else {echo 'Zeitraum';} ?> </label></td>
-															<td>
-																<div style="float: left; margin-right:10px; margin-left:20px;">
-																	<div style="float: left; padding-right: 10px; line-height: 18px;"><?php if ($la == en) {echo 'from';} else {echo 'von';} ?> </div>
-																	<div style="float: left;">
-																		<?php
-																			$myCalendar = new tc_calendar("datea", true, false);
-																			$myCalendar->setIcon("calendar/images/iconCalendar.gif");
-																			$myCalendar->setDate();
-																			$myCalendar->setPath("calendar/");
-																			$myCalendar->setYearInterval(2006, 2020);
-																			$myCalendar->setAlignment('left', 'bottom');
-																			$myCalendar->setDatePair('date5', 'date6', $date8);
-																			$myCalendar->startMonday(true);
-																			$myCalendar->writeScript();
-																			$von = $myCalendar->getDate();
-																		?>
-
-																	</div>
-																</div>
-																<div style="float: left; margin-right:10px;">
-																	<div style="float: left; padding-left: 10px; padding-right: 10px; line-height: 18px;"><?php if ($la == en) {echo 'to';} else {echo 'bis';} ?> </div>
-																	<div style="float: left;">
-																		<?php
-																			$myCalendar = new tc_calendar("dateb", true, false);
-																			$myCalendar->setIcon("calendar/images/iconCalendar.gif");
-																			$myCalendar->setDate();
-																			$myCalendar->setPath("calendar/");
-																			$myCalendar->setYearInterval(2006, 2020);
-																			$myCalendar->setAlignment('left', 'bottom');
-																			$myCalendar->setDatePair('date5', 'date6', $date7);
-																			$myCalendar->startMonday(true);
-																			$myCalendar->writeScript();
-																			$bis = $myCalendar->getDate();
-																		?>
-																	</div>
-																</div>
-															</td>
-														</tr> -->
 
 
 														<tr><td>&nbsp;</td></tr>
@@ -322,6 +281,60 @@ include('calendar/classes/tc_calendar.php'); ?>
 
                                 </td>
                         	</tr>
+													<tr><td>&nbsp;</td></tr>
+													<tr>
+
+														<td colspan="2">
+															<label for="date_check"><?php if ($la == en) {echo 'Include Period';} else {echo 'Zeitraum berücksichtigen';} ?> </label>
+															<input style="margin-left:25px;" id="date_check" name="date_check" type="checkbox" value="1" <?php if (!empty($_GET['date_check'])) {echo ' checked';} ?> />
+														</td>
+													</tr>
+
+													<tr>
+
+														<td colspan="2">
+															<div style="float: left; margin-right:10px; margin-left:20px;">
+																<div style="float: left; padding-right: 10px; line-height: 18px;"><?php if ($la == en) {echo 'from';} else {echo 'von';} ?> </div>
+																<div style="float: left;">
+																	<?php
+																		$myCalendar = new tc_calendar("datea", true, false);
+																		$myCalendar->setIcon("calendar/images/iconCalendar.gif");
+																		$myCalendar->setPath("calendar/");
+																		$myCalendar->setYearInterval(2006, 2020);
+																		$myCalendar->setAlignment('left', 'bottom');
+																		$myCalendar->setDatePair('date5', 'date6', $date8);
+																		$myCalendar->startMonday(true);
+																		$tmp_datea = $_GET['datea'];
+																		$tmp_datea_arr = explode("-", $tmp_datea);
+																		$myCalendar->setDate($tmp_datea_arr[2], $tmp_datea_arr[1], $tmp_datea_arr[0]);
+																		$myCalendar->writeScript();
+
+																	?>
+
+																</div>
+															</div>
+															<div style="float: left; margin-right:10px;">
+																<div style="float: left; padding-left: 10px; padding-right: 10px; line-height: 18px;"><?php if ($la == en) {echo 'to';} else {echo 'bis';} ?> </div>
+																<div style="float: left;">
+																	<?php
+																		$myCalendar = new tc_calendar("dateb", true, false);
+																		$myCalendar->setIcon("calendar/images/iconCalendar.gif");
+																		$myCalendar->setPath("calendar/");
+																		$myCalendar->setYearInterval(2006, 2020);
+																		$myCalendar->setAlignment('left', 'bottom');
+																		$myCalendar->setDatePair('date5', 'date6', $date7);
+																		$myCalendar->startMonday(true);
+																		$tmp_dateb = $_GET['dateb'];
+																		$tmp_dateb_arr = explode("-", $tmp_dateb);
+																		$myCalendar->setDate($tmp_dateb_arr[2], $tmp_dateb_arr[1], $tmp_dateb_arr[0]);
+																		$myCalendar->writeScript();
+
+																	?>
+
+																</div>
+															</div>
+														</td>
+													</tr>
 
                  </table>
 
@@ -335,10 +348,6 @@ include('calendar/classes/tc_calendar.php'); ?>
 					//Wenn suche ausgeführt wird
 					if (isset($_GET['query_meg_codes'])) {
 
-
-
-
-
 						// Texteingabe einer Variable zuordnen
 						$suchtext_wst = $_GET['suche_wst'];
 						$suchtext_kunde = $_GET['s_k'];
@@ -346,22 +355,27 @@ include('calendar/classes/tc_calendar.php'); ?>
 						$suchtext_werkstoff = $_GET['s_w'];
 						$suchtext_geheim = $_GET['suche_geheim'];
 						$suchtext_lfdnr = $_GET['suche_lfdnr'];
-						$von = $_GET['datea'];
-						$bis = $_GET['dateb'];
+						$von = strtotime($_GET['datea']);
+						$bis = strtotime($_GET['dateb']);
+
 
 
 						// Hier steckt die Funktion dahinter die den MySQL_String für die Abfrage zusammenbastelt
 						include("function_abfrage_aufbauen.php");
 
-
-
 						// Hier werden die jeweiligen Variablen gefüllt mit den Werten aus dem array query_meg_codes
 						include("picto.php");
 
 						//Funktion abfrage_aufbauen wird aufgerufen. siehe ganz oben im Skripten. + Übergabe der Parameter in der KLammer
-						$sql_wst = abfrage_aufbauen($suchtext_wst, $suchtext_kunde, $suchtext_mnummer, $suchtext_werkstoff, $suchtext_geheim, $suchtext_lfdnr, $branche, $technologie_1, $technologie_2, $technologie_3, $technologie_4, $baureihe, $von, $bis);
-						$sql_wst .=  ' AND ( aktiv = 1)';
-						
+						$sql_wst = abfrage_aufbauen($suchtext_wst, $suchtext_kunde, $suchtext_mnummer, $suchtext_werkstoff, $suchtext_geheim, $suchtext_lfdnr, $branche, $technologie_1, $technologie_2, $technologie_3, $technologie_4, $baureihe);
+
+						if (strlen($sql_wst)!=17) {
+							$sql_wst .=  ' AND ( aktiv = 1)';
+						} else {
+							$sql_wst = "SELECT * FROM wst WHERE aktiv = 1";
+						}
+
+
 						$ergebnis_wst = mysqli_query($db, $sql_wst) or die('Es konnte keine Suche durchgeführt werden. Bitte starten Sie eine neue Suchanfrage.');
 
 
@@ -369,10 +383,32 @@ include('calendar/classes/tc_calendar.php'); ?>
 
 							while ($zeile_wst = mysqli_fetch_array($ergebnis_wst)) {
 
-								// echo $zeile_wst['erstellungsdatum'];
+								$show_wst = 1;
+								if (!empty($_GET['date_check'])) {
+									$show_wst = 0;
+									if ($zeile_wst['datum_alter']!="") {
+										if (preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$zeile_wst['datum_alter']))
+										{
+											$zeitpunkt = strtotime($zeile_wst['datum_alter']);
+										}else{
+											$zeitpunkt = strtotime($zeile_wst['erstellungsdatum']);
+										}
+									} else {
+										$zeitpunkt = strtotime($zeile_wst['erstellungsdatum']);
+									}
+
+									if (($zeitpunkt >= $von) && ($zeitpunkt <= $bis)) {
+											$show_wst = 1;
+									}
+
+
+								}
+
+								if ($show_wst == 1) {
+
 								 ?>
 
-	                            <div id="box_erg">
+	              <div id="box_erg">
 
 								<div id="picture_small"><img src="../img/<?php echo $zeile_wst['foto']; ?>" height="70px" max-width="120px" /></div>
 
@@ -494,8 +530,11 @@ include('calendar/classes/tc_calendar.php'); ?>
 
 
 
-						//END WHILE SCHLEIFE
+							}
 						}
+
+						//END WHILE SCHLEIFE
+
 						if (($_SESSION['rolle'] == 1) OR ($_SESSION['rolle'] == 2)) {
 							// Listenlogik
 							include("list.php");
@@ -574,6 +613,7 @@ include('calendar/classes/tc_calendar.php'); ?>
 
 			//END IF ISSET
 			}
+
 
 
 			?>
