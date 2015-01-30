@@ -211,7 +211,7 @@ include("base.php");?>
                     	<input type=button onClick="window.location.href='wst_info.php?lfd=<?php echo $lfd; ?>'" value="zum Werkstück" class="grau" />
                       <a href="javascript:gf_onsubmit_set_meg();document.queryform.submit();" rel="nofollow"><input name="wst_change" type="submit"  value="speichern" class="grau" /></a>
 											<div>
-													<select style="float:right;" name="aktiv" >
+													<select style="float:right;margin-top:-20px;" name="aktiv" >
 														<option value="0" <?php if( $zeile['aktiv'] == 0 ) {echo "selected='selected'";}?> >deaktivieren</option>
 														<option value="1" <?php if( $zeile['aktiv'] == 1 ) {echo "selected='selected'";}?> >aktiv</option>
 													</select>

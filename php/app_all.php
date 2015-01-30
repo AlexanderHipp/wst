@@ -47,7 +47,7 @@ include("base.php");?>
                                 $pub_nr_de = $zeile_app['pub_nr_de'];
 
                                 // tabelle:wst Daten holen
-                                $sql_wst = "SELECT * FROM wst WHERE lfd_nr = $pub_nr_de";
+                                $sql_wst = "SELECT * FROM wst WHERE lfd_nr = $pub_nr_de AND aktiv = 1";
 
                                 $ergebnis_wst = mysqli_query($db, $sql_wst) or die('Es konnten keine Informationen über das Werkstück abgerufen werden. Bitte versuchen Sie es noch einmal.');
                                 $zeile_wst = mysqli_fetch_array($ergebnis_wst);

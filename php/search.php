@@ -360,9 +360,8 @@ include('calendar/classes/tc_calendar.php'); ?>
 
 						//Funktion abfrage_aufbauen wird aufgerufen. siehe ganz oben im Skripten. + Übergabe der Parameter in der KLammer
 						$sql_wst = abfrage_aufbauen($suchtext_wst, $suchtext_kunde, $suchtext_mnummer, $suchtext_werkstoff, $suchtext_geheim, $suchtext_lfdnr, $branche, $technologie_1, $technologie_2, $technologie_3, $technologie_4, $baureihe, $von, $bis);
-
-						//echo $sql_wst;
-
+						$sql_wst .=  ' AND ( aktiv = 1)';
+						
 						$ergebnis_wst = mysqli_query($db, $sql_wst) or die('Es konnte keine Suche durchgeführt werden. Bitte starten Sie eine neue Suchanfrage.');
 
 

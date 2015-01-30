@@ -173,12 +173,7 @@ include("base.php");?>
 				// Für jede WST_Position wird ein Div angelegt und mit Infos ausgestattet
 				while ($zeile_his =  mysqli_fetch_array($ergebnis_his)) {
 
-
-               	$ergebnis_gefunden = 1;
-                ?>
-        		<div id="box_erg">
-
-                  	<?php	// WST-Informationen werden aus der tabelle:wst geladen
+					// WST-Informationen werden aus der tabelle:wst geladen
 					$wst_wst = $zeile_his['werkstueck'];
 					$sql_wst = "SELECT * FROM wst WHERE lfd_nr = '$wst_wst'";
 
@@ -186,7 +181,15 @@ include("base.php");?>
 
 					$zeile_wst =  mysqli_fetch_array($ergebnis_wst);
 
-    				?>
+               	$ergebnis_gefunden = 1;
+
+						if ($zeile_wst['aktiv'] == 1) {
+						?>
+						<div id="box_erg">
+
+
+
+
 
                   	<div id="picture_small"><img src="../img/<?php echo $zeile_wst['foto']; ?>" height="70px" max-width="120px" /></div>
                   	<div id="wst_descr">
@@ -325,6 +328,7 @@ include("base.php");?>
                   </div>
 
          <?php }
+				}
 
 
 
