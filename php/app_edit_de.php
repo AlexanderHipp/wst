@@ -52,10 +52,7 @@ include("base.php");?>
 			$prod = $_POST['prod'];
 			$quali = $_POST['quali'];
 			$fert = $_POST['fert'];
-			$foto1 = $_FILES['foto1']['name'];
-			$beschr1 = $_POST['beschr1'];
-			$foto2 = $_FILES['foto2']['name'];
-			$beschr2 = $_POST['beschr2'];
+
 			$bearb = $_POST['bearb'];
 			$pub = $_POST['pub'];
 			$bearbeiter = $_POST['bearbeiter'];
@@ -78,12 +75,25 @@ include("base.php");?>
 				// Status auf fertig bearbeitet setzen
 				$status = 1;
 
-				//Die Bild-Datei in das Verzeichnis img
-				$ziel1 = "../". WST_IMAGESPFAD . $foto1;
-				$ziel2 = "../". WST_IMAGESPFAD . $foto2;
 
-				move_uploaded_file($_FILES['foto1']['tmp_name'], $ziel1);
-				move_uploaded_file($_FILES['foto2']['tmp_name'], $ziel2);
+				$foto1 ="";
+				$foto2 ="";
+				$beschr1 ="";
+				$beschr2 ="";
+
+				if (isset($_FILES['foto1']['name'])) {
+					$foto1 = $_FILES['foto1']['name'];
+					$beschr1 = $_POST['beschr1'];
+					$ziel1 = "../". WST_IMAGESPFAD . $foto1;
+					move_uploaded_file($_FILES['foto1']['tmp_name'], $ziel1);
+				}
+
+				if (isset($_FILES['foto2']['name'])) {
+					$foto2 = $_FILES['foto2']['name'];
+					$beschr2 = $_POST['beschr2'];
+					$ziel2 = "../". WST_IMAGESPFAD . $foto2;
+					move_uploaded_file($_FILES['foto2']['tmp_name'], $ziel2);
+				}
 
 				$sql_app = "UPDATE app
 							SET de = '$status',

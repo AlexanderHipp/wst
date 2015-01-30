@@ -84,7 +84,6 @@ include("base.php");?>
 				$datum = $datum_array[0].".".$datum_array[1].".".$datum_array[2];
 
 
-
 				//Variablen füllen
 				$stueckzeit = $_POST['stueckzeit'];
 				$programmierer = $_POST['programmierer'];
@@ -121,7 +120,31 @@ include("base.php");?>
 				if ($foto == "") { $fb_foto = 1; }
 				if ($zuweisung_de == "") { $fb_zuweisung_de = 1; }
 
-				if (($bezeichnung == "") OR ($bezeichnung_en == "") OR ($geheim == "") OR ($regal == "") OR ($reihe == "") OR ($fach == "") OR ($menge == "") OR ($rohteil == "") OR ($lfdnr == "") OR ($kunde == "") OR ($branche == "") OR ($technologie_1 == "") OR ($technologie_2 == "") OR ($technologie_3 == "") OR ($baureihe == "") OR ($maschtyp == "") OR ($maschnr == "") OR ($stueckzeit == "") OR ($programmierer == "") OR ($werkstoff == "") OR ($foto == "")  OR ($zuweisung_de == "")) { $feedback = 1; } else {
+				if (($bezeichnung == "")
+				OR ($bezeichnung_en == "")
+				OR ($geheim == "")
+				OR ($regal == "")
+				OR ($reihe == "")
+				OR ($fach == "")
+				OR ($menge == "")
+				OR ($rohteil == "")
+				OR ($lfdnr == "")
+				OR ($kunde == "")
+				OR ($branche == "")
+				OR ($technologie_1 == "")
+				OR ($technologie_2 == "")
+				OR ($technologie_3 == "")
+				OR ($baureihe == "")
+				OR ($maschtyp == "")
+				OR ($maschnr == "")
+				OR ($stueckzeit == "")
+				OR ($programmierer == "")
+				OR ($werkstoff == "")
+				OR ($foto == "")
+				OR ($zuweisung_de == "")) {
+					$feedback = 1;
+				} else {
+
 
 
 					// Wenn alle Pflichtfelder ausgefüllt wurden soll Folgendes ausgeführt werden
@@ -130,8 +153,60 @@ include("base.php");?>
 					$ziel = "../". WST_IMAGESPFAD . $foto;
 					if (move_uploaded_file($_FILES['foto']['tmp_name'], $ziel)) {
 
-						$sql = "INSERT INTO wst (lfd_nr, datum_alter, bezeichnung, bezeichnung_en, geheim, regal, reihe, fach, menge, menge_cur, rohteil, kunde, maschtyp, maschnr, branche, technologie_1, technologie_2, technologie_3, technologie_4, baureihe, stueckzeit, programmierer, werkstoff, foto, kommentar, zuweisung_de)".
-							"VALUES ('$lfdnr', '$datum', '$bezeichnung', '$bezeichnung_en', '$geheim', '$regal', '$reihe', '$fach', '$menge', '$menge_cur', '$rohteil', '$kunde', '$maschtyp', '$maschnr', '$branche', '$technologie_1', '$technologie_2', '$technologie_3', '$technologie_4', '$baureihe',  '$stueckzeit', '$programmierer', '$werkstoff', '$foto', '$kommentar', '$zuweisung_de')";
+						$sql = "INSERT INTO wst (
+						lfd_nr,
+						datum_alter,
+						bezeichnung,
+						bezeichnung_en,
+						geheim,
+						regal,
+						reihe,
+						fach,
+						menge,
+						menge_cur,
+						rohteil,
+						kunde,
+						maschtyp,
+						maschnr,
+						branche,
+						technologie_1,
+						technologie_2,
+						technologie_3,
+						technologie_4,
+						baureihe,
+						stueckzeit,
+						programmierer,
+						werkstoff,
+						foto,
+						kommentar,
+						zuweisung_de)".
+							"VALUES (
+							'$lfdnr',
+							'$datum',
+							'$bezeichnung',
+							'$bezeichnung_en',
+							'$geheim',
+							'$regal', 
+							'$reihe',
+							'$fach',
+							'$menge',
+							'$menge_cur',
+							'$rohteil',
+							'$kunde',
+							'$maschtyp',
+							'$maschnr',
+							'$branche',
+							'$technologie_1',
+							'$technologie_2',
+							'$technologie_3',
+							'$technologie_4',
+							'$baureihe',
+							'$stueckzeit',
+							'$programmierer',
+							'$werkstoff',
+							'$foto',
+							'$kommentar',
+							'$zuweisung_de')";
 						$ergebnis = mysqli_query($db, $sql) or die('Das Werkstück konnte nicht angelegt werden. Bitte laden Sie die Seite neu und versuchen es noch einmal.');
 						$sql_app = "INSERT INTO app (pub_nr_de, de) VALUES ('$lfdnr', '$app_new')";
 						$ergebnis_app = mysqli_query($db, $sql_app) or die('Der Datenbank konnten keine Informationen übermittelt werden. Überprüfen Sie bitte Ihre Eingabe.');

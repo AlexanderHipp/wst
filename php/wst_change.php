@@ -480,12 +480,24 @@ include("base.php");?>
                                     <div id="meg404" class="meg_btn
 									<?php if( $zeile['baureihe'] == 404 ) {echo "meg_btn_pushed";} ?>
                                     " onClick="$('#meg404').toggleClass('meg_btn_pushed')" style="background-image:url(../img/meg_404_4multistate.png)" title="18"></div>
-                                    <div id="meg405" class="meg_btn
+
+                                    <div id="meg407" class="meg_btn
+									<?php if( $zeile['baureihe'] == 407 ) {echo "meg_btn_pushed";} ?>
+                                    " onClick="$('#meg407').toggleClass('meg_btn_pushed')" style="background-image:url(../img/meg_407_4multistate.png)" title="24"></div>
+
+																		<div id="meg408" class="meg_btn
+									<?php if( $zeile['baureihe'] == 408 ) {echo "meg_btn_pushed";} ?>
+																		" onClick="$('#meg408').toggleClass('meg_btn_pushed')" style="background-image:url(../img/meg_408_4multistate.png)" title="26"></div>
+
+																		<div id="meg405" class="meg_btn
 									<?php if ($zeile['baureihe'] == 405 ) {echo "meg_btn_pushed";} ?>
-                                    " onClick="$('#meg405').toggleClass('meg_btn_pushed')" style="background-image:url(../img/meg_405_4multistate.png)" title="MILL"></div>
-                                    <div id="meg406" class="meg_btn
-									<?php if( $zeile['baureihe'] == 406 ) {echo "meg_btn_pushed";} ?>
-                                    " onClick="$('#meg406').toggleClass('meg_btn_pushed')" style="background-image:url(../img/meg_406_4multistate.png)" title="BIG MILL"></div>
+																		" onClick="$('#meg405').toggleClass('meg_btn_pushed')" style="background-image:url(../img/meg_405_4multistate.png)" title="MILL"></div>
+
+																		<div id="meg409" class="meg_btn
+									<?php if( $zeile['baureihe'] == 409 ) {echo "meg_btn_pushed";} ?>
+																		" onClick="$('#meg409').toggleClass('meg_btn_pushed')" style="background-image:url(../img/meg_409_4multistate.png)" title="H"></div>
+
+
                                 </td>
                         	</tr>
                             <tr>
